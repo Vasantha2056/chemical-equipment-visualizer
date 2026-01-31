@@ -1,70 +1,167 @@
-# Getting Started with Create React App
+Chemical Equipment Parameter Visualizer – Hybrid Web + Desktop Application
+Project Overview
+This project is a Hybrid Web + Desktop Application that allows users to upload a CSV file containing chemical equipment data such as Equipment Name, Type, Flowrate, Pressure, and Temperature. The Django backend processes the CSV file, performs data analysis, and exposes APIs. Both the React Web frontend and PyQt5 Desktop application consume the same APIs to display data tables, charts, and summary analytics.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
 
-## Available Scripts
+CSV File Upload
 
-In the project directory, you can run:
+Equipment Data Table Display
 
-### `npm start`
+Summary Statistics API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Interactive Charts (Web + Desktop)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Data Analytics using Pandas
 
-### `npm test`
+REST API Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Desktop Application Support
 
-### `npm run build`
+Technology Stack
+Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Python
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Django
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Django REST Framework
 
-### `npm run eject`
+SQLite
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pandas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+django-cors-headers
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Web Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+React.js
 
-## Learn More
+Axios
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Chart.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+react-chartjs-2
 
-### Code Splitting
+Desktop Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Python
 
-### Analyzing the Bundle Size
+PyQt5
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Requests
 
-### Making a Progressive Web App
+Matplotlib
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Project Structure
+chemical equipment visualizer/
+│
+├── backend/
+│   ├── manage.py
+│   └── api/
+│
+├── frontend/
+│   ├── src/
+│   └── package.json
+│
+├── desktop app/
+│   └── main.py
+│
+└── README.md
 
-### Advanced Configuration
+Setup Instructions
+1. Backend Setup (Django API)
+Step 1 – Open terminal in backend folder
+cd backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Step 2 – Install required packages
+pip install django djangorestframework pandas django-cors-headers
 
-### Deployment
+Step 3 – Run database migrations
+python manage.py makemigrations
+python manage.py migrate
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Step 4 – Start Django server
+python manage.py runserver
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Backend API will run at:
+
+http://127.0.0.1:8000
+
+2. Web Frontend Setup (React)
+Step 1 – Open terminal in frontend folder
+cd frontend
+
+Step 2 – Install node modules
+npm install
+
+Step 3 – Install chart & api packages
+npm install axios chart.js react-chartjs-2
+
+Step 4 – Start React server
+npm start
+
+
+Web app will open at:
+
+http://localhost:3000
+
+3. Desktop Application Setup (PyQt5)
+Step 1 – Install desktop packages
+pip install pyqt5 requests matplotlib pandas
+
+Step 2 – Navigate to desktop app folder
+cd "desktop app"
+
+Step 3 – Run desktop application
+python main.py
+
+API Endpoints
+Endpoint	Method	Description
+/api/upload/	POST	Upload CSV file
+/api/equipment/	GET	Fetch equipment list
+/api/summary/	GET	Fetch analytics summary
+Demo Flow
+
+Start Django backend
+
+Start React frontend
+
+Upload CSV file
+
+View data table
+
+View charts & summary
+
+Open desktop app and view same data
+
+Submission Contents
+
+GitHub Repository (backend + frontend + desktop app)
+
+README.md file
+
+2–3 minute demo video
+
+Optional deployed web link
+
+Author
+
+Reshma Chlo
+Intern Screening Task Submission – 2026
+Department: Computer Science / Information Technology
+
+Status
+
+✅ Backend – Completed
+✅ Web Frontend – Completed
+✅ Desktop Application – Completed
+✅ API Integration – Completed
+✅ Data Visualization – Completed
+
+Final Notes
+
+This project demonstrates full-stack development + desktop application integration, data processing, REST API handling, and visualization.
+
+🔥 Project Successfully Completed
